@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function NavItems() {
+function NavItems({ scrollPast }) {
   return (
     <nav className='w-full justify-center items-center gap-x-4 hidden lg:flex'>
       <ul className='flex'>
@@ -8,7 +8,9 @@ function NavItems() {
           <span className='flex items-center justify-between'>
             <span>Solutions</span>
             <svg
-              className='ml-2 mt-1 fill-white'
+              className={`ml-2 mt-1 ${
+                scrollPast ? "fill-text-primaryBlue" : "fill-white"
+              }`}
               width='9'
               height='6'
               viewBox='0 0 9 6'
@@ -95,7 +97,13 @@ function NavItems() {
         </li>
         <div className='ml-6 my-auto'>
           <div className='relative lg:block hidden'>
-            <button className='rounded-[132px] flex items-center justify-center space-x-[8px] border px-[14px] py-[8px] lg:text-body-p1 text-res-body-p0 text-white border-white'>
+            <button
+              className={`rounded-[132px] flex items-center justify-center space-x-[8px] border px-[14px] py-[8px] lg:text-body-p1 text-res-body-p0 ${
+                scrollPast
+                  ? "text-text-primaryBlue border-border-primaryBlue"
+                  : "text-white border-white"
+              } `}
+            >
               <svg
                 width='12'
                 height='13'

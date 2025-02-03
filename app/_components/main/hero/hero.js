@@ -7,8 +7,8 @@ import HeroImage from "./hero-image";
 function HeroSection() {
   return (
     <>
-      <section className='lg:h-[max(620px,_calc(92vh-49px))] h-auto relative w-full text-white lg:bg-clip-hero-container overflow-hidden pt-[30%] md:pt-[20%] lg:pt-0 pb-[15%] svelte-n9olsd px-6 md:px-0'>
-        <div className='container relative z-10 w-full h-full md:flex md:items-center md:justify-center mx-auto'>
+      <section className=' h-auto relative w-full text-white lg:h-[max(620px,_calc(92vh-49px))] lg:bg-clip-hero-container overflow-hidden pt-[30%] md:pt-[20%] lg:pt-0 pb-[15%] svelte-n9olsd px-6 md:px-0'>
+        <div className='container relative z-10 w-full h-full md:flex md:items-center md:justify-center mx-auto '>
           <div className='h-fit lg:flex-[65] xl:flex-[75]'>
             <div className='max-w-2xl lg:space-y-sm space-y-[16px] mb-[32px]'>
               <h1 className='lg:max-w-max lg:whitespace-pre-line lg:text-head-1 font-montserrat text-res-head-1 text-white '>
@@ -22,14 +22,14 @@ function HeroSection() {
                 <CTAHero text='Reach Out to Us' />
               </div>
             </div>
-          </div>{" "}
+          </div>
           <div className='lg:flex-[35] xl:flex-[25] lg:block hidden'></div>
         </div>
         <HeroImage />
         <SVGBackgroundOne />
         <SVGBackgroundTwo />
       </section>
-      <div className='block lg:hidden translate-y-[-20%] -mb-[10%] relative'>
+      <div className='block lg:hidden translate-y-[-20%] -mb-[10%]'>
         <figure
           className='object-cover overflow-hidden'
           style={{
@@ -46,7 +46,7 @@ function HeroSection() {
             priority
           />
         </figure>
-        <div className='gradient-overlay absolute inset-0'></div>
+        <div className='gradient-overlay'></div>
       </div>
     </>
   );
