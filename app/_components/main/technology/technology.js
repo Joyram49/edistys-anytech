@@ -1,7 +1,10 @@
+"use client";
+import { useState } from "react";
 import TechnologySlides from "./technology-slides";
 import TechnologyTab from "./technology-tab";
 
 function Technology() {
+  const [activeIndex, setActiveIndex] = useState(0);
   return (
     <>
       <section className='container mx-auto px-6 md:px-0'>
@@ -13,8 +16,8 @@ function Technology() {
             The future of finance
           </h2>
         </div>
-        <TechnologyTab />
-        <TechnologySlides />
+        <TechnologyTab activeIndex={activeIndex} />
+        <TechnologySlides setActiveIndex={setActiveIndex} />
       </section>
       <svg
         xmlns='http://www.w3.org/2000/svg'

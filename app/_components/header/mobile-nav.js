@@ -9,7 +9,7 @@ function MobileNav() {
   return (
     <nav
       className={`absolute top-[calc(95%_+_2rem)] bg-[#1B76E9] lg:hidden transition-transform w-full inset-x-0 py-8  px-[1.938rem] ${
-        isNavOpen ? "translate-x-0" : "-translate-x-full"
+        isNavOpen ? "translate-x-0" : "-translate-x-[120%]"
       }`}
     >
       <ul className='flex items-center flex-col space-y-8'>

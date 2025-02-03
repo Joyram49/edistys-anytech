@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const cardData = [
@@ -29,18 +31,22 @@ const cardData = [
       "We seamlessly combine cutting-edge technologies, resulting in an unparalleled fintech experience for financial institutions.",
   },
 ];
+
 function PhilosophyCards() {
   return (
     <ul className='grid lg:grid-cols-3 grid-cols-2 gap-[30px]'>
-      {cardData.map((card) => (
-        <li
+      {cardData.map((card, index) => (
+        <motion.li
           key={card.id}
           className='translate-y-[20%] opacity-0 z-20 h-full md:space-y-sm space-y-[8px] bg-background-cardBlue rounded-[20px] md:p-md p-sm text-border-deepBlue'
-          style={{
-            transform: "translateY(var(--motion-translateY))",
-            "--motion-translateY": "0px",
-            opacity: 1,
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.5,
+            ease: "easeOut",
+            delay: index * 0.2,
           }}
+          viewport={{ once: true }}
         >
           <figure className='w-fit rounded-full'>
             <Image
@@ -56,7 +62,7 @@ function PhilosophyCards() {
             {card.title}
           </h4>
           <p className='text-body-1'>{card.description}</p>
-        </li>
+        </motion.li>
       ))}
     </ul>
   );

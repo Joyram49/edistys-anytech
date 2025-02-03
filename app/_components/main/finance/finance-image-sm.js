@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 function FinanceImageSm() {
@@ -14,11 +16,16 @@ function FinanceImageSm() {
         />
       </figure>
       <div>
-        <figure
+        <motion.figure
           className='absolute top-[10%] right-[3%] translate-x-1/2 w-[min(115px,_30%)] rounded-full drop-shadow-2xl'
-          style={{
-            transform: "translateX(50%) translateY(var(--motion-translateY))",
-            "--motion-translateX": "50%",
+          animate={{
+            y: ["0%", "20%", "0%"],
+          }}
+          transition={{
+            duration: 10,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "loop",
           }}
         >
           <Image
@@ -28,11 +35,17 @@ function FinanceImageSm() {
             height={115}
             className='object-contain w-full h-full'
           />
-        </figure>
-        <figure
+        </motion.figure>
+        <motion.figure
           className='absolute top-[40%] left-[20%] w-[min(87px,_20%)] rounded-full drop-shadow-2xl'
-          style={{
-            transform: "translateY(var(--motion-translateY))",
+          animate={{
+            y: ["0%", "20%", "0%"],
+          }}
+          transition={{
+            duration: 10,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "loop",
           }}
         >
           <Image
@@ -42,13 +55,17 @@ function FinanceImageSm() {
             height={88}
             className='object-contain w-full h-full'
           />
-        </figure>
-        <figure
+        </motion.figure>
+        <motion.figure
           className='absolute top-[20%] left-[6%] -translate-x-1/2 w-[min(73px,_18%)] rounded-full drop-shadow-2xl'
-          style={{
-            transform:
-              "translateX(var(--motion-translateX)) translateY(var(--motion-translateY))",
-            "--motion-translateX": "-50%",
+          animate={{
+            y: ["0%", "20%", "0%"],
+          }}
+          transition={{
+            duration: 10,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "loop",
           }}
         >
           <Image
@@ -58,7 +75,7 @@ function FinanceImageSm() {
             height={75}
             className='object-contain w-full h-full'
           />
-        </figure>
+        </motion.figure>
       </div>
       <figure
         className='absolute inset-0 w-full h-full -z-10'

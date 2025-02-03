@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import CTAHero from "../../common/cta";
 import SVGBackgroundOne from "../../common/svg-background-one";
@@ -25,7 +27,20 @@ function HeroSection() {
           </div>
           <div className='lg:flex-[35] xl:flex-[25] lg:block hidden'></div>
         </div>
-        <HeroImage />
+        <motion.div
+          className='absolute inset-0 flex items-center justify-center'
+          initial={{ x: "10%", opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 25,
+          }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <HeroImage />
+        </motion.div>
+
         <SVGBackgroundOne />
         <SVGBackgroundTwo />
       </section>

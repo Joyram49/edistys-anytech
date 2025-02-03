@@ -95,7 +95,7 @@ const customStyles = `
     background: #9CA3AF;
   }
 `;
-function TechnologySlides() {
+function TechnologySlides({ setActiveIndex }) {
   return (
     <>
       <style>{customStyles}</style>
@@ -116,6 +116,7 @@ function TechnologySlides() {
             },
           }}
           className='w-full'
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         >
           {swiperData.map((slide) => (
             <SwiperSlide key={slide.id}>

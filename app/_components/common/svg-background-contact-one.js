@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 const SVGBackgroundContactOne = (props) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
@@ -7,13 +10,19 @@ const SVGBackgroundContactOne = (props) => (
     viewBox='0 0 2316 1021'
   >
     <g id='cta-background-patterns'>
-      <g
+      <motion.g
         id='dark-patterns'
-        style={{
-          "--motion-translateX": "0px",
-          "--motion-translateY": "0px",
-          transition: "transform 500ms cubic-bezier(.25,.46,.45,.94)",
+        initial={{ x: 20, y: 20 }}
+        whileInView={{
+          x: 0,
+          y: 0,
         }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 20,
+        }}
+        viewport={{ once: true }}
       >
         <path
           id='Vector'
@@ -91,15 +100,21 @@ const SVGBackgroundContactOne = (props) => (
             d='M1854.1 284.937v-50.91l-198.39 164.596h61.36z'
           ></path>
         </g>
-      </g>
-      <g
+      </motion.g>
+      <motion.g
         id='light-patterns'
         opacity='1'
-        style={{
-          "--motion-translateX": "0px",
-          "--motion-translateY": "0px",
-          transition: "transform 500ms cubic-bezier(.25,.46,.45,.94)",
+        initial={{ x: -20, y: -20 }} // Initial position
+        whileInView={{
+          x: 0,
+          y: 0,
         }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 20,
+        }}
+        viewport={{ once: true }}
       >
         <g id='Vector_13' filter='url(#filter3_f_1_547)'>
           <path
@@ -188,7 +203,7 @@ const SVGBackgroundContactOne = (props) => (
             d='m614 21.998-379 379h27.084L614 49.082z'
           ></path>
         </g>
-      </g>
+      </motion.g>
     </g>
     <defs>
       <linearGradient

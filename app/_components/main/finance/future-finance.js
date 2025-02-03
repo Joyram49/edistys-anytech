@@ -5,7 +5,7 @@ function FutureFinance() {
   return (
     <>
       <section className='container mt-[62px] mx-auto px-6 md:px-0'>
-        <div className='grid md:grid-cols-2 grid-cols-1 md:gap-[15px] relative'>
+        <div className='grid md:grid-cols-2 grid-cols-1 md:gap-[15px] relative  justify-center items-center'>
           <FinanceContent />
           <FinanceImageSm />
         </div>

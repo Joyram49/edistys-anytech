@@ -41,8 +41,8 @@ function Header() {
         ${isScrollingUp ? "translate-y-0" : "-translate-y-full"}
         ${
           isScrolledPast
-            ? "bg-white text-text-primaryBlue shadow-md"
-            : "bg-transparent text-white"
+            ? "bg-text-primaryBlue lg:bg-white text-text-primaryBlue shadow-md"
+            : "bg-text-primaryBlue lg:bg-transparent text-white"
         }
       `}
     >
@@ -76,7 +76,7 @@ function Header() {
             )}
           </div>
         </div>
-        <MobileNav />
+        <MobileNav scrollPast={isScrolledPast} />
       </div>
     </header>
   );
